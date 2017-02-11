@@ -1,0 +1,18 @@
+---
+- hosts: webservers
+  vars_files:
+    - ../vars/{{env}}/main.yml
+  tasks:
+    - name: Stop IBM HTTP admin Server
+      shell: '/opt/IBM/HTTPServer/bin/adminctl stop'
+      ignore_errors: yes
+    - name: Stop IBM HTTP Server
+      shell: '/opt/IBM/HTTPServer/bin/apachectl stop'
+      ignore_errors: yes
+    - name: Uninstall IBM Installation Manager
+      shell: '/opt/IBM/HTTPServer/uninstall/uninstall -silent'
+      ignore_errors: yes
+    - name: Remove directories
+      shell: 'rm -rf /opt/IBM/HTTPServer/;rm -rf /opt/IBM/WebSphere/'
+      ignore_errors: yes
+

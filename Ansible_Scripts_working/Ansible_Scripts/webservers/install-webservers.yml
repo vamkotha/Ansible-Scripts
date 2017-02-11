@@ -1,0 +1,10 @@
+---
+- hosts: webservers
+  vars_files:
+    - ../vars/{{env}}/main.yml
+  tasks:
+    - name: Copy the response file to install IBM HTTP Server
+      template: src=templates/{{http_server_response_filename}} dest=/opt/IBM/{{http_server_response_filename}}
+    - name: Install IBM HTTP Server
+      shell: '/opt/IBM/software/IHS/install -options /opt/IBM/{{http_server_response_filename}} -silent'
+

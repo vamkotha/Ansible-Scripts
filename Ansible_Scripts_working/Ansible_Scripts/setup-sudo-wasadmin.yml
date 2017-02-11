@@ -1,0 +1,12 @@
+---
+- hosts: all
+  vars:
+    file_limit: 1048576
+    nproc_limit: 131072
+  tasks:
+    - name: Setup sudo access to wasadmin for ansible
+      lineinfile: "dest=/etc/sudoers regexp='^{{item}}\\sALL=\\(wasadmin\\)' line='{{item}} ALL=(wasadmin) NOPASSWD: ALL' state=present"
+      with_items:
+        - pintoad
+        - chauhany
+        - sudulav

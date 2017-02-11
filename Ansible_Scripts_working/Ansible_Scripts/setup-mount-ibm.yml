@@ -1,0 +1,10 @@
+---
+- hosts: all
+  vars:
+    directory_1: /opt/IBM
+    directory_2: /opt/IBM/logs
+  tasks:
+    - name: Create directory 1 for file share 1
+      file: path={{directory_1}} state=directory
+    - name: Create directory 2 for file share 2
+      file: path={{directory_2}} state=directory

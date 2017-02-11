@@ -1,0 +1,11 @@
+---
+- hosts: webservers
+  vars_files:
+    - ../vars/{{env}}/main.yml
+  tasks:
+    - name: Start the administration Server
+      shell: '/opt/IBM/HTTPServer/bin/adminctl restart'
+    - name: Restart IBM HTTP Server
+      shell: '/opt/IBM/HTTPServer/bin/apachectl restart'
+      become: no
+

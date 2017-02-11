@@ -1,0 +1,19 @@
+-OPT silentInstallLicenseAcceptance="true"
+-OPT allowNonRootSilentInstall=false
+-OPT installLocation="/opt/IBM/HTTPServer"
+-OPT httpPort="80"
+-OPT adminPort="8008"
+-OPT createAdminAuth="true"
+-OPT disableOSPrereqChecking="true"
+-OPT adminAuthUser="root"
+-OPT adminAuthPassword="root"
+-OPT adminAuthPasswordConfirm="passw0rd"
+-OPT runSetupAdmin="true"
+-OPT createAdminUserGroup=true
+-OPT setupAdminUser="root"
+-OPT setupAdminGroup="root"
+-OPT installPlugin="true"
+-OPT webserverDefinition="webserver1"
+-OPT washostname="192.168.70.132"
+###############################################################################
+
